@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.cash{
+    border: none;
+    border-radius: 20%;
+    background-color: rgb(160, 160, 160);
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+    border: 4px solid rgb(160, 160, 160);
+}
+
+.welcome{
+    text-align: center;
+    font-size: 9vw;
+}
+
+.visit-us{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.visit-us a{
+    text-decoration: none;
+    font-size: 6vw;
+    color: red;
+    background-color: aqua;
+    padding: 14px 14px 14px 14px;
+}
+
+.cash:active{
+    background-color: rgb(222, 222, 222);
+}
+
+.cash:hover{
+    border-color: black;
+}
+
+.menu div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu img{
+    width: 100%;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+    height: 90vw;
+}
