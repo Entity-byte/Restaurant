@@ -2,10 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 2vw;
 }
 
 body{
     padding: 15vw;
+}
+
+h2{
+    margin-left: 20vw;
+    margin-bottom: 1vw;
+    font-size: 3vw;
+    font-weight: 100;
 }
 
 button{
@@ -26,13 +34,13 @@ input{
 
 .add-button{
     background-color: rgb(0, 255, 0);
-    width: 5vw;
+    width: 8vw;
     margin-right: 0.5vw;
     margin-left: 0.5vw;
 }
 .reset-button{
     background-color: blue;
-    width: 5vw;
+    width: 8vw;
 }
 
 .add-list div{
@@ -43,11 +51,11 @@ input{
 .add-list div button{
     background-color: red;
     text-align: center;
-    width: 10.8vw;
+    width: 17vw;
 }
 
 .add-list p:first-child{
-    width: 15.4vw;
+    width: 15.8vw;
     display: flex;
     flex-wrap: wrap;
 }
