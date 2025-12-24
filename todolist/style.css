@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 150px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+}
+
+.add-list{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-button{
+    background-color: rgb(0, 255, 0);
+    margin-right: 7px;
+}
+.reset-button{
+    background-color: blue;
+}
+
+.add-list div{
+    display: flex;
+    align-items: center;
+}
+
+.add-list div button{
+    background-color: red;
+    text-align: center;
+    width: 103px;
+}
+
+.add-list p:first-child{
+    width: 170px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.add-list p:nth-child(2){
+    width: 118px;
+    display: flex;
+    flex-wrap: wrap;
+}
