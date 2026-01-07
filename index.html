@@ -1,34 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McDonalds</title>
-    <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotary Selector</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f0f0f0;
+        padding-top: 50px;
+    }
+    .knob-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+    .knob {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ccc 60%, #999 100%);
+        border: 5px solid #666;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        cursor: grab;
+        transition: transform 0.05s linear;
+    }
+    .indicator {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        width: 4px;
+        height: 40px;
+        background: red;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+    .value-display {
+        margin-top: 20px;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
-    <script src="./script.js"></script>
-    <h1 class="welcome">Welcome to McDonalds!</h1>
-    <section class="menu">
-        <div>
-            <img src="./resources/Hamburger.png" alt="BigMac">
-            <button class="cash" onclick="audio.play();">Buy</button>
-        </div>
-        <div>
-            <img src="./resources/fries.png" alt="BigMac">
-            <button class="cash" onclick="audio.play();">Buy</button>
-        </div>
-        <div>
-            <img src="./resources/Cola.png" alt="BigMac">
-            <button class="cash" onclick="audio.play();">Buy</button>
-        </div>
-        <div>
-            <img src="./resources/toisudes.png" alt="BigMac">
-            <button class="cash" onclick="audio.play();">Buy</button>
-        </div>
-    </section>
-    <div class="visit-us">
-        <a href="https://entity-byte.github.io/hollowknight-website/" class="visit-us">Visit our website~</a>
+
+<h1>Rotary Selector</h1>
+<div class="knob-container">
+    <div class="knob" id="knob">
+        <div class="indicator"></div>
     </div>
+</div>
+<div class="value-display" id="valueDisplay">Value: 0°</div>
+
+<script>
+(function() {
+    const knob = document.getElementById('knob');
+    const valueDisplay = document.getElementById('valueDisplay');
+    let isDragging = false;
+    let rotation = 0;
+
+    // Convert mouse position to angle
+    function getAngle(x, y, rect) {
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const dx = x - centerX;
+        const dy = y - centerY;
+        let angle = Math.atan2(dy, dx) * (180 / Math.PI);
+        return angle;
+    }
+
+    knob.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        e.preventDefault();
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const rect = knob.getBoundingClientRect();
+        let angle = getAngle(e.clientX, e.clientY, rect);
+        rotation = angle + 90; // Adjust so indicator starts at top
+        knob.style.transform = `rotate(${rotation}deg)`;
+        valueDisplay.textContent = `Value: ${Math.round((rotation + 360) % 360)}°`;
+    });
+})();
+</script>
+
 </body>
 </html>
