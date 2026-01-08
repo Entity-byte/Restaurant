@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 10vw 0 10vw 0;
+}
+
+.cube-display{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    background-color: aqua;
+    height: 35vw;
+    margin-bottom: 5vw;
+}
+
+.cube-isthere{
+    width: 3vw;
+    height: 3vw;
+    background-color: red;
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+}
+
+.joystick{
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.joystick button{
+    font-size: 2vw;
+    background-color: rgb(0, 255, 0);
+    border: none;
+    padding: 3vw 3vw 3vw 3vw;
+    border-radius: 2vw;
+}
+
+.joystick button:active{
+    background-color: blue;
+}
