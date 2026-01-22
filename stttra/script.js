@@ -1,6 +1,3 @@
-Telegram.WebApp.ready();
-Telegram.WebApp.expand();
-
 let isTracking = false;
 
 let onepos = true;
@@ -42,3 +39,4 @@ document.addEventListener("pointerleave", () => {
   onepos = true;
 
 });
+
