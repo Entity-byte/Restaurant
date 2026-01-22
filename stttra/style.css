@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: none;
+}
+
+body{
+    padding: 10vw 0 10vw 0;
+}
+
+#cube{
+    position: absolute;
+    top: 5vw;
+    left: 47vw;
+    font-size: 10vw;
+    user-select: none;          /* Standard */
+    -webkit-user-select: none;  /* Chrome/Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE/Edge */
+}
+
+.cont-in{
+    height: 40vw;
+    width: 100%;
+    background-color: cyan;
+    position: relative;
+    overflow: hidden;
+}
+
+.poi-the-m{
+    height: 10vw;
+    width: 30vw;
+    border: 0.2vw solid red;
+    position: absolute;
+    top: 15vw;
+    left: 36vw;
+}
