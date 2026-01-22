@@ -4,11 +4,11 @@ let onepos = true;
 let ovval = 5;
 let cubpos = 5;
 
-document.addEventListener("mousedown", (e) => {
+document.addEventListener("pointerdown", (e) => {
   isTracking = true;
 });
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("pointermove", (e) => {
   if (!isTracking) return;
 
   let posy = e.clientY;
@@ -29,12 +29,12 @@ document.addEventListener("mousemove", (e) => {
   elone.style.top = cubpos / 150 + "vw";
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("pointerup", () => {
   isTracking = false;
   onepos = true;
 });
 
-document.addEventListener("mouseleave", () => {
+document.addEventListener("pointerleave", () => {
   isTracking = false;
   onepos = true;
 });
